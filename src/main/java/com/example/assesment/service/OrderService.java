@@ -23,6 +23,10 @@ public class OrderService {
         return ordRepo.save(ord);
     }
     
+    public Orders updateOrder(Orders ord){
+        return ordRepo.save(ord);
+    }
+    
     public List<Orders> getAllOrders(){
         List<Orders> orders = ordRepo.findAll();
         return orders;

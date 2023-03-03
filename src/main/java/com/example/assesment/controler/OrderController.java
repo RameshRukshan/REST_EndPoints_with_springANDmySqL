@@ -10,6 +10,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +27,11 @@ public class OrderController {
     @PostMapping(path = "/orders")
     public Orders createOrder(@RequestBody Orders ord){
         return ordS.createOrder(ord);
+    }
+    
+    @PutMapping(path="/update_order")
+    public Orders updateOrder(@RequestBody Orders ord){
+        return ordS.updateOrder(ord);
     }
     
     @GetMapping(path="/all_orders")
