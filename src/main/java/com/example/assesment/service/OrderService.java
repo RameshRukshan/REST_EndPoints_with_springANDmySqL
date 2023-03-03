@@ -6,6 +6,7 @@ package com.example.assesment.service;
 
 import com.example.assesment.data.Orders;
 import com.example.assesment.data.OrdersRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,11 @@ public class OrderService {
     
     public Orders createOrder(Orders ord){
         return ordRepo.save(ord);
+    }
+    
+    public List<Orders> getAllOrders(){
+        List<Orders> orders = ordRepo.findAll();
+        return orders;
     }
     
 }
