@@ -32,4 +32,8 @@ public class OrderService {
         return orders;
     }
     
+    public void deleteOrderbyID(int id){
+        ordRepo.deleteById(id);
+    }
+    
 }

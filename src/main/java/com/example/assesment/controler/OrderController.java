@@ -8,7 +8,9 @@ import com.example.assesment.data.Orders;
 import com.example.assesment.service.OrderService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,5 +39,10 @@ public class OrderController {
     @GetMapping(path="/all_orders")
     public List<Orders> getAllOrders(){
         return ordS.getAllOrders();
+    }
+    
+    @DeleteMapping(path="/del_order={id}")
+    public void deleteOrder(@PathVariable int id){
+        ordS.deleteOrderbyID(id);
     }
 }
