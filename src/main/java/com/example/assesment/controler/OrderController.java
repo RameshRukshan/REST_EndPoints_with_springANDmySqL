@@ -31,17 +31,17 @@ public class OrderController {
         return ordS.createOrder(ord);
     }
     
-    @PutMapping(path="/update_order")
+    @PutMapping(path="/orders")
     public Orders updateOrder(@RequestBody Orders ord){
         return ordS.updateOrder(ord);
     }
     
-    @GetMapping(path="/all_orders")
+    @GetMapping(path="/orders")
     public List<Orders> getAllOrders(){
         return ordS.getAllOrders();
     }
     
-    @DeleteMapping(path="/del_order={id}")
+    @DeleteMapping(path="/order={id}")
     public void deleteOrder(@PathVariable int id){
         ordS.deleteOrderbyID(id);
     }
